@@ -364,4 +364,6 @@ export const DATA_APORTES_INICIAL: CL_mAporte[] = [
     "Mobiliario Moderno",
     "Jurídico"
   )
+
+  //hola
 ];

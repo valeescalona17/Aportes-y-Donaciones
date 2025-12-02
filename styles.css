@@ -1,0 +1,345 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f4f8;
+}
+
+header {
+  background: #283593;
+  color: #fff;
+  padding: 1rem 2rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+main {
+  padding: 1.5rem 2rem;
+}
+
+/* Barra de acciones */
+.barra-acciones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.barra-acciones span {
+  font-weight: bold;
+}
+
+/* Estilo para el botón de estadísticas */
+#btn-ver-estadisticas, #admin-btn-ver-estadisticas {
+  padding: 0.5rem 1rem;
+  background: #607d8b; /* Un color distinto para destacar */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#btn-ver-estadisticas:hover, #admin-btn-ver-estadisticas:hover {
+  background: #455a64;
+}
+
+#btn-mostrar-form-aporte {
+  padding: 0.5rem 1rem;
+  background: #3949ab;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#btn-mostrar-form-aporte:hover {
+  background: #303f9f;
+}
+
+/* Tabla de aportes */
+/* Contenedor para desplazamiento horizontal en móvil */
+.tabla-container {
+    width: 100%;
+    overflow-x: auto; /* Permite desplazamiento horizontal si la tabla es más ancha que la pantalla */
+}
+
+/* Estilos compartidos para tabla de usuario y administrador */
+#tabla-aportes, #admin-tabla-aportes {
+  width: 100%;
+  min-width: 700px; /* Asegura un ancho mínimo para que el desplazamiento sea útil */
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+#tabla-aportes thead th, #admin-tabla-aportes thead th {
+  background: #e8eaf6;
+  color: #111;
+  text-align: left;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.95rem;
+  border-bottom: 2px solid #d1d8e0;
+}
+
+#tabla-aportes tbody td, #admin-tabla-aportes tbody td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid #f0f0f2;
+  vertical-align: middle;
+  font-size: 0.92rem;
+}
+
+#tabla-aportes tbody tr:nth-child(even), #admin-tabla-aportes tbody tr:nth-child(even) {
+  background: #fafbff;
+}
+
+#tabla-aportes tbody tr:hover, #admin-tabla-aportes tbody tr:hover {
+  background: #f1f3ff;
+}
+
+/* Alineaciones específicas */
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+
+/* Botones dentro de la tabla */
+.btn-editar-aporte {
+  padding: 0.35rem 0.65rem;
+  border: none;
+  border-radius: 4px;
+  background: #3949ab;
+  color: #fff;
+  cursor: pointer;
+}
+.btn-editar-aporte:hover {
+  background: #303f9f;
+}
+
+.btn-eliminar-aporte {
+  padding: 0.35rem 0.65rem;
+  border: none;
+  border-radius: 4px;
+  background: #c62828;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 0.4rem;
+}
+.btn-eliminar-aporte:hover { background: #b71c1c; }
+
+.btn-ver-reportes {
+  padding: 0.35rem 0.65rem;
+  border: none;
+  border-radius: 4px;
+  background: #607d8b;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 0.4rem;
+}
+.btn-ver-reportes:hover { background: #455a64; }
+
+/* Botones admin (paralelos a user) */
+#admin-btn-mostrar-form-aporte {
+  padding: 0.5rem 1rem;
+  background: #3949ab;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#admin-btn-mostrar-form-aporte:hover { background: #303f9f; }
+
+#admin-btn-aceptar-aporte {
+  padding: 0.45rem 1rem;
+  border-radius: 4px;
+  border: none;
+  background: #2e7d32;
+  color: #fff;
+  cursor: pointer;
+}
+#admin-btn-aceptar-aporte:hover { background: #1b5e20; }
+
+#admin-btn-eliminar-cancelar-aporte {
+  padding: 0.45rem 1rem;
+  border-radius: 4px;
+  border: none;
+  background: #c62828;
+  color: #fff;
+  cursor: pointer;
+}
+#admin-btn-eliminar-cancelar-aporte:hover { background: #b71c1c; }
+
+/* Modal */
+.modal-fondo {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-contenido {
+  background: #fff;
+  border-radius: 6px;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* Formulario del modal */
+.modal-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+}
+
+.campo label {
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.campo input,
+.campo select {
+  padding: 0.35rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+/* Footer del modal */
+.modal-footer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+#btn-aceptar-aporte {
+  padding: 0.45rem 1rem;
+  border-radius: 4px;
+  border: none;
+  background: #2e7d32;
+  color: #fff;
+  cursor: pointer;
+}
+
+#btn-aceptar-aporte:hover {
+  background: #1b5e20;
+}
+
+#btn-eliminar-cancelar-aporte {
+  padding: 0.45rem 1rem;
+  border-radius: 4px;
+  border: none;
+  background: #c62828;
+  color: #fff;
+  cursor: pointer;
+}
+
+#btn-eliminar-cancelar-aporte:hover {
+  background: #b71c1c;
+}
+
+/* Utilidades */
+.hidden {
+  display: none;
+}
+
+/* *** Estilos para la tabla de estadísticas *** */
+.tabla-estadisticas {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.tabla-estadisticas th, .tabla-estadisticas td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.tabla-estadisticas th {
+  background-color: #f1f3ff;
+  font-weight: bold;
+}
+
+.tabla-estadisticas td:nth-child(2), /* Cantidad */
+.tabla-estadisticas td:nth-child(3), /* Porcentaje */
+.tabla-estadisticas td:nth-child(4) { /* Monto Total */
+  text-align: right;
+}
+
+.tabla-estadisticas .total-row td {
+  font-weight: bold;
+  background-color: #e8eaf6;
+  border-top: 2px solid #303f9f;
+}
+
+/* Responsive */
+/* Estilos para la barra de acciones en pantallas pequeñas (hasta 768px) */
+@media (max-width: 768px) {
+  .barra-acciones {
+    flex-direction: column; /* Apila elementos verticalmente */
+    align-items: flex-start; /* Alinea a la izquierda */
+    gap: 0.75rem;
+  }
+  
+  /* Asegura que los campos de filtro ocupen todo el ancho para mejor pulsación */
+  .barra-acciones label,
+  .barra-acciones select,
+  .barra-acciones input {
+      width: 100%;
+      box-sizing: border-box; /* Incluye padding y border en el ancho total */
+  }
+
+  /* El total y los botones de acción se separan */
+  .barra-acciones > span,
+  .barra-acciones > button {
+      width: 100%;
+      text-align: center; /* Centra el texto del total y los botones */
+  }
+}
+
+/* Estilos para el formulario modal y padding principal en pantallas muy pequeñas (hasta 600px) */
+@media (max-width: 600px) {
+  main {
+    padding: 1rem;
+  }
+
+  /* El formulario modal se convierte en una sola columna */
+  .modal-form {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-contenido {
+      padding: 1rem;
+  }
+}
